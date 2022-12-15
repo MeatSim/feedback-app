@@ -5,12 +5,12 @@ import Card from './shared/Card'
 import FeedbackContext from '../context/FeedbackContext'
 
 function FeedbackItem({item}) {
-    const { handleDelete, editFeedback } = useContext(FeedbackContext);
+    const { deleteFeedback, editFeedback } = useContext(FeedbackContext);
 
     return (
         <Card>
             <div className='num-display'>{item.rating}</div>
-            <button onClick={() => handleDelete(item.id)} className="close">
+            <button onClick={() => deleteFeedback(item.id)} className="close">
                 <FaTimes color='purple' />
             </button>
             <button onClick={()=> editFeedback(item)} className="edit">
